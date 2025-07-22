@@ -52,7 +52,7 @@ const getTheResourceBasedOnParams = async (req, res) => {
     };
     const fn = fns[req.params.resource];
     if (!fn) return res.status(404).json({ success: false, message: 'Unknown resource' });
-    const data = await fn();
+    const data = await fn(req.jira);
     res.status(200).json({ success: true, message: `${req.params.resource} fetched`, data ,length : data.length});
   } catch (err) {
     console.error(err);

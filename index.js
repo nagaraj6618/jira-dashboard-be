@@ -9,7 +9,8 @@ const jiraRoute = require('./route/jiraRoute');
 
 const app = express()
 const PORT = process.env.PORT || 3500
-const cors = require('cors')
+const cors = require('cors');
+const { jiraAuthMiddleware } = require('./middleware/authVerify');
 
 
 app.use(cors())
@@ -19,7 +20,7 @@ app.get('/',(req,res)=>{
 res.status(200).send("Api connected Successfully!")
 })
 
-app.use('/api/v1',jiraApiCallRoute);
+app.use('/api/v1',jiraAuthMiddleware,jiraApiCallRoute);
 app.use('/api/v1/auth',authRoute);
 app.use('/api/v1/jira',jiraRoute);
 
