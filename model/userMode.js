@@ -5,10 +5,11 @@ const userSchema = new mongoose.Schema({
       type:String,
       required:true,
    },
-   jiraTokenId:{
-      type:String,
-      default:"empty"
-   }
+   jiraTokenId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'jira', // refers to the Jira model
+      default: null, // optional and initially empty
+}
 },{
    timestamps:true
 });

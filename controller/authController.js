@@ -101,4 +101,5 @@ const verifyOtp = async (req, res) => {
 };
 
 
+
 module.exports = {loginRegister,verifyOtp}
