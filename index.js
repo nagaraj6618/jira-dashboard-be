@@ -20,7 +20,7 @@ app.get('/',(req,res)=>{
 res.status(200).send("Api connected Successfully!")
 })
 
-app.use('/api/v1',jiraAuthMiddleware,jiraApiCallRoute);
+app.use('/api/v1',jiraApiCallRoute);
 app.use('/api/v1/auth',authRoute);
 app.use('/api/v1/jira',jiraRoute);
 
