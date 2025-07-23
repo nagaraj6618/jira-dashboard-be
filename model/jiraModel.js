@@ -12,6 +12,11 @@ const jiraTokenSchema = new mongoose.Schema({
    token:{
       type:String,
       required:true
+   },
+   userId:{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'user', 
+      required:true,
    }
 },{timestamps:true});
 

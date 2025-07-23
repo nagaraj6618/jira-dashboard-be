@@ -7,8 +7,8 @@ const userSchema = new mongoose.Schema({
    },
    jiraTokenId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'jira', // refers to the Jira model
-      default: null, // optional and initially empty
+      ref: 'jira', 
+      default: null, 
 }
 },{
    timestamps:true
